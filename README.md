@@ -1,21 +1,13 @@
-sendmail Cookbook
+sendmail
 =================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Install and configure sendmail with a relay host. More TBD.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - sendmail needs toaster to brown your bagel.
+Currently, this only supports ubuntu.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
 e.g.
 #### sendmail::default
@@ -27,19 +19,34 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['sendmail']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['sendmail']['relay_host']</tt></td>
+    <td>String</td>
+    <td>which host to relay to</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['sendmail']['relay_port']</tt></td>
+    <td>String</td>
+    <td>which port to relay on</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['sendmail']['relay_username']</tt></td>
+    <td>String</td>
+    <td>when relaying, which username to login with</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['sendmail']['relay_password']</tt></td>
+    <td>String</td>
+    <td>when relaying, which password to login with</td>
+    <td><tt>nil</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### sendmail::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `sendmail` in your node's `run_list`:
 
 ```json
@@ -53,9 +60,6 @@ Just include `sendmail` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -65,4 +69,5 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+License: MIT
+Authors: Liftopia

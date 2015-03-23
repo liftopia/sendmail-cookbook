@@ -73,7 +73,7 @@ FEATURE(`use_cw_file')dnl
 dnl #
 dnl # The access db is the basis for most of sendmail's checking
 <%- if node[:sendmail][:relay_host] -%>
-define(`SMART_HOST', `smtp.sendgrid.net')dnl
+define(`SMART_HOST', `<%= node[:sendmail][:relay_host] %>')dnl
 <%- end -%>
 FEATURE(`access_db')dnl
 <%- if node[:sendmail][:relay_port] -%>

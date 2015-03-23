@@ -138,7 +138,7 @@ Connect:192.0.2 REJECT
 Connect:224		REJECT
 Connect:255		REJECT
 
-<%- if node[:sendmail][:relay_host] -%>
+<%- if node[:sendmail][:relay_host] && node[:sendmail][:relay_username] -%>
 # Setup authentication
-AuthInfo:<%= node[:sendmail][:relay_host] "U:<%= node[:sendmail][:relay_username] %>" "P:<%= node[:sendmail][:relay_password] %>" "M:PLAIN"
+AuthInfo:<%= node[:sendmail][:relay_host] %> "U:<%= node[:sendmail][:relay_username] %>" "P:<%= node[:sendmail][:relay_password] %>" "M:PLAIN"
 <%- end -%>
