@@ -9,6 +9,7 @@
 
 service 'postfix' do
   action [ :disable, :stop ]
+  only_if { File.exist?('/etc/init.d/postfix') }
 end
 
 package 'postfix' do
